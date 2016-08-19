@@ -69,7 +69,7 @@ getCorrelated = function(file1, file2) {
             names(corList)[length(corList)] =   # Gets the last element of the vector; the last element added
                 paste(row.names(partialTable)[iter1], row.names(partialTable)[iter2], sep=" vs. ")
        
-        }
+        } 
     }
 
     # Orders corList so most highly correlated miRNAs appear first
