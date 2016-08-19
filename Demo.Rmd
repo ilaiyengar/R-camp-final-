@@ -16,7 +16,7 @@ source("TCGA_DataProcessing.R")
 ##Top 100 miRNA pairs, with correlation values
 
 ```{r print}
-getCorrelated("Trimmed_BRCA_mRNA.txt", "GroupB_BRCA_miR.txt") -> out
+getCorrelated("Example/Trimmed_BRCA_mRNA.txt", "Example/GroupB_BRCA_miR.txt") -> out
 print(out[1:100])
 ```
 
