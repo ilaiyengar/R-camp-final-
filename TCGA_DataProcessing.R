@@ -43,9 +43,10 @@ getCorrelated = function(file1, file2) {
     # Merges tables mRNA and miRNA so that the data from the same patients are in the
     ## same column
     fullTable = mergeTablesByPatientID(mRNA, miRNA)
+    # Creates table with only the miRNA names
     partialTable = as.matrix(splitmiRNATable(as.matrix(fullTable)))
 
-
+    # 
     fileOne = read.table(file1, header=T, row.names=1, stringsAsFactors=F)
     fileTwo = read.table(file2, header=T, row.names=1, stringsAsFactors=F)
     fullTable = mergeTablesByPatientID(fileOne, fileTwo)
