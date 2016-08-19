@@ -2,15 +2,13 @@
 source("MergeTables.R")
 
 
-mRNA = read.table("BRCA_50_mRNA.txt", header=T, row.names=1, stringsAsFactors=F)
-miRNA = read.table("BRCA_50_miR.txt", header=T, row.names=1, stringsAsFactors=F)
+mRNA = read.table("Trimmed_BRCA_mRNA.txt", header=T, row.names=1, stringsAsFactors=F)
+miRNA = read.table("GroupB_BRCA_miR.txt", header=T, row.names=1, stringsAsFactors=F)
 fullTable = mergeTablesByPatientID(mRNA, miRNA)
 partialTable = as.matrix(splitmiRNATable(as.matrix(fullTable)))
-partialTable = cleanNAs(partialTable)
 
-partialTable = partialTable[1:100,] # for debugging
 
-corError = function(x) {x=c(x,NaN)}
+
 
 corList = c()
 
@@ -22,7 +20,7 @@ for (iter1 in 1:(nrow(partialTable)-1)) {       # iterates over each row in the 
         # use="complete" prevents failing on NA
         
         corList = c(corList,
-                    cor(partialTable[iter1,], partialTable[iter2,], use="complete"))
+                    cor(partialTable[iter1,], partialTable[iter2,]))
 
         # Name the correlation value just added.
         # Without this, it would be impossible to match sorted correlations to the miRNA pairs.

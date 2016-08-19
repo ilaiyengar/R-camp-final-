@@ -31,11 +31,3 @@ splitmiRNATable = function(x) {
     return(x[grep("hsa", rownames(x)),])
 }
 
-cleanNAs = function(inTable) {
-    output = matrix()
-    for (i in nrow(inTable)) {
-        if () { # Insert code to check if all are NA
-            output = rbind(output, inTable[i,])
-        }
-    }
-}
