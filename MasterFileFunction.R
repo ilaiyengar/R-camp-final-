@@ -1,3 +1,4 @@
+Correlation=function(data1, data2) {
 # Collection of functions used to process data from tables
 
 
@@ -35,9 +36,7 @@ splitmiRNATable = function(x) {
 source("MergeTables.R")
 
 
-mRNA = read.table("Trimmed_BRCA_mRNA.txt", header=T, row.names=1, stringsAsFactors=F)
-miRNA = read.table("GroupB_BRCA_miR.txt", header=T, row.names=1, stringsAsFactors=F)
-fullTable = mergeTablesByPatientID(mRNA, miRNA)
+fullTable = mergeTablesByPatientID(data1, data2)
 partialTable = as.matrix(splitmiRNATable(as.matrix(fullTable)))
 
 
@@ -65,3 +64,4 @@ for (iter1 in 1:(nrow(partialTable)-1)) {       # iterates over each row in the 
 corList = rev(sort(abs(corList)))
 highCor=corList[1:100]
 highCor[1:10]
+}
