@@ -1,4 +1,4 @@
-Correlation=function(data1, data2) {
+HighCorrelation=function(data1, data2) {
 # Collection of functions used to process data from tables
 
 
