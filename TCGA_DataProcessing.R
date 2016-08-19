@@ -51,9 +51,7 @@ getCorrelated = function(file1, file2) {
     # Creates table with only the miRNA names
     partialTable = as.matrix(splitTableByPattern(as.matrix(fullTable)))
 
-
-
-
+    # prevents bad stuff
     corList = c()
 
     # iter1 is the index of the first part of the pair
@@ -73,7 +71,9 @@ getCorrelated = function(file1, file2) {
        
         }
     }
+    # Orders corList so most highly correlated miRNAs appear first
     corList = rev(sort(corList))
+    # Prints 
     return(corList)
 
 }
