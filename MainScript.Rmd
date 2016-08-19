@@ -16,6 +16,7 @@ source("mainloop.R")
 ##Top 100 miRNA pairs, with correlation values
 
 ```{r print}
-print(highCor)
+functionThingy("Trimmed_BRCA_mRNA.txt", "GroupB_BRCA_miR.txt", 100) -> out
+print(out)
 ```
 
