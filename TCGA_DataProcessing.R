@@ -4,6 +4,7 @@ mergeTablesByPatientID <- function(x, y, IDStart = 9, IDEnd = 12) {
     # Function that merges two tables x and y so that data with the same column name are together
     # x and y should be tables with the sample IDs as column names
     # IDStart and IDEnd are used to split a string, isolating the patient ID.
+    # For more information on TCGA barcodes, go to https://wiki.nci.nih.gov/display/TCGA/TCGA+barcode
     
     colX = colnames(x)      # Get names of columns
     colY = colnames(y)      #   and save to new vectors
