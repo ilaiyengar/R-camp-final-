@@ -30,3 +30,9 @@ splitmiRNATable = function(x) {
     
     return(x[grep("hsa", rownames(x)),])
 }
+
+cleanNAs = function(inTable) {
+    for (i in nrow(inTable)) {
+        
+    }
+}
