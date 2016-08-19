@@ -32,7 +32,10 @@ splitmiRNATable = function(x) {
 }
 
 cleanNAs = function(inTable) {
+    output = matrix()
     for (i in nrow(inTable)) {
-        
+        if () { # Insert code to check if all are NA
+            output = rbind(output, inTable[i,])
+        }
     }
 }

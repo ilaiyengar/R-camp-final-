@@ -6,7 +6,9 @@ mRNA = read.table("BRCA_50_mRNA.txt", header=T, row.names=1, stringsAsFactors=F)
 miRNA = read.table("BRCA_50_miR.txt", header=T, row.names=1, stringsAsFactors=F)
 fullTable = mergeTablesByPatientID(mRNA, miRNA)
 partialTable = as.matrix(splitmiRNATable(as.matrix(fullTable)))
+partialTable = cleanNAs(partialTable)
 
+partialTable = partialTable[1:100,] # for debugging
 
 corError = function(x) {x=c(x,NaN)}
 
