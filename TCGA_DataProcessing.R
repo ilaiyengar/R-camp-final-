@@ -1,8 +1,8 @@
 # Collection of functions used to process data from tables
 
 mergeTablesByPatientID <- function(x, y, IDStart = 9, IDEnd = 12) {
-    # Merges tables so that same column name are 
-    # x and y should be tables with column names as the sample IDs.
+    # Function that merges two tables x and y so that data with the same column name are together
+    # x and y should be tables with the sample IDs as column names
     # IDStart and IDEnd are used to split a string, isolating the patient ID.
     
     colX = colnames(x)      # Get names of columns
@@ -25,7 +25,7 @@ mergeTablesByPatientID <- function(x, y, IDStart = 9, IDEnd = 12) {
 
 
 splitmiRNATable = function(x, match="hsa") {
-    # x is a matrix processed by mergeTablesByPatientID()
+    # x one of the matrices processed by mergeTablesByPatientID()
     # This function returns the table with only the miRNA section
     
     return(x[grep(match, rownames(x)),])
