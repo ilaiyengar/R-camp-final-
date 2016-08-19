@@ -78,7 +78,7 @@ getCorrelated = function(file1, file2) {
     # Returns values in order of most to least correlated.
 
     corList = rev(sort(corList))
-    # Prints 
+    # Returns value of corList
     return(corList)
 
 }
