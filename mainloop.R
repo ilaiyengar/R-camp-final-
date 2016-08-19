@@ -25,7 +25,7 @@ for (iter1 in 1:(nrow(partialTable)-1)) {       # iterates over each row in the 
         # Name the correlation value just added.
         # Without this, it would be impossible to match sorted correlations to the miRNA pairs.
         names(corList)[length(corList)] =   # Gets the last element of the vector; the last element added
-            paste(row.names(partialTable)[iter1], row.names(partialTable)[iter2])
+            paste(row.names(partialTable)[iter1], row.names(partialTable)[iter2], sep=" vs. ")
        
     }
 }

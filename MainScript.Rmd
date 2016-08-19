@@ -1,0 +1,21 @@
+---
+title: "Highly Correlated miRNAs"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+```{r test}
+source("mainloop.R")
+```
+
+##Top 100 miRNA pairs, with correlation values
+
+```{r print}
+print(highCor)
+```
+
