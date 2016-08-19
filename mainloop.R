@@ -1,10 +1,10 @@
 # "Imports" necessary files
 source("MergeTables.R")
 
-
+functionThingy = function(file1, file2, numOut) {
 # Change these values
-mRNA = read.table("Trimmed_BRCA_mRNA.txt", header=T, row.names=1, stringsAsFactors=F)
-miRNA = read.table("GroupB_BRCA_miR.txt", header=T, row.names=1, stringsAsFactors=F)
+mRNA = read.table(file1, header=T, row.names=1, stringsAsFactors=F)
+miRNA = read.table(file2, header=T, row.names=1, stringsAsFactors=F)
 fullTable = mergeTablesByPatientID(mRNA, miRNA)
 partialTable = as.matrix(splitmiRNATable(as.matrix(fullTable)))
 
@@ -31,5 +31,7 @@ for (iter1 in 1:(nrow(partialTable)-1)) {       # iterates over each row in the 
     }
 }
 corList = rev(sort(abs(corList)))
-highCor=corList[1:100]
+highCor=corList[1:numOut]
 return(highCor)
+
+}
