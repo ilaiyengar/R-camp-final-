@@ -2,6 +2,7 @@
 source("MergeTables.R")
 
 
+# Change these values
 mRNA = read.table("Trimmed_BRCA_mRNA.txt", header=T, row.names=1, stringsAsFactors=F)
 miRNA = read.table("GroupB_BRCA_miR.txt", header=T, row.names=1, stringsAsFactors=F)
 fullTable = mergeTablesByPatientID(mRNA, miRNA)
