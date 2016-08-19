@@ -71,7 +71,12 @@ getCorrelated = function(file1, file2) {
        
         }
     }
+
     # Orders corList so most highly correlated miRNAs appear first
+
+    # Sorts the list by how much each miRNA pair is correlated
+    # Returns values in order of most to least correlated.
+
     corList = rev(sort(corList))
     # Prints 
     return(corList)
