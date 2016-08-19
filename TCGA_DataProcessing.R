@@ -36,21 +36,19 @@ splitTableByPattern = function(x, match="hsa") {
 getCorrelated = function(file1, file2) {
     # This function finds the most highly correlated miRNAs 
     
-    # Reads text file as a table and tells R that there are column and row names
-    ## This way the dimensions will be correct
-    mRNA = read.table(file1, header=T, row.names=1, stringsAsFactors=F)
-    miRNA = read.table(file2, header=T, row.names=1, stringsAsFactors=F)
     
-    # Merges tables mRNA and miRNA so that the data from the same patients are in the
-    ## same column
-    fullTable = mergeTablesByPatientID(mRNA, miRNA)
-    # Creates table with only the miRNA names
-    partialTable = as.matrix(splitmiRNATable(as.matrix(fullTable)))
+    
 
-    # 
+    # Reads text file as a table and tells R that there are column and row names
+    # This way the dimensions will be correct
     fileOne = read.table(file1, header=T, row.names=1, stringsAsFactors=F)
     fileTwo = read.table(file2, header=T, row.names=1, stringsAsFactors=F)
+    
+    # Merges tables mRNA and miRNA so that the data from the same patients are in the
+    # same column
     fullTable = mergeTablesByPatientID(fileOne, fileTwo)
+    
+    # Creates table with only the miRNA names
     partialTable = as.matrix(splitTableByPattern(as.matrix(fullTable)))
 
 
