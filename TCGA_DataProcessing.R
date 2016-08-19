@@ -1,7 +1,7 @@
 # Collection of functions used to process data from tables
 
-
 mergeTablesByPatientID <- function(x, y, IDStart = 9, IDEnd = 12) {
+    # Merges tables so that same column name are 
     # x and y should be tables with column names as the sample IDs.
     # IDStart and IDEnd are used to split a string, isolating the patient ID.
     
