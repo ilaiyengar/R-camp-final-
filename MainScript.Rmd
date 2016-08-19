@@ -10,13 +10,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ```{r test}
-source("mainloop.R")
+source("TCGA_DataProcessing.R")
 ```
 
 ##Top 100 miRNA pairs, with correlation values
 
 ```{r print}
-functionThingy("Trimmed_BRCA_mRNA.txt", "GroupB_BRCA_miR.txt", 100) -> out
-print(out)
+getCorrelated("Trimmed_BRCA_mRNA.txt", "GroupB_BRCA_miR.txt") -> out
+print(out[1:100])
 ```
 
