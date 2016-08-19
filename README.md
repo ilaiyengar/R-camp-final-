@@ -1,3 +1,3 @@
-# TCGA_DataProcessing.R
+# R-camp-final-
 ##About the Package
-This is a collection of functions that can be used to process data from the TCGA database, and get the highest correlation between pairs of miRNA data rows and mRNA data rows. The syntax is getCorrelated(file1, file2). (Use files for file1 and file2 not already read databases.)
+This is a collection of functions that can be used to process data from the TCGA database, and get the highest correlation between pairs of miRNA data rows and mRNA data rows. To use, source the TCGA_DataProcessing.R file, and run the getCorrelation function with the miRNA and mRNA files as the arguments.
