@@ -30,4 +30,4 @@ for (iter1 in 1:(nrow(partialTable)-1)) {       # iterates over each row in the 
     }
 }
 corList = rev(sort(abs(corList)))
-corList[1:5]
+highCor=corList[1:100]
