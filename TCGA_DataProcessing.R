@@ -24,11 +24,11 @@ mergeTablesByPatientID <- function(x, y, IDStart = 9, IDEnd = 12) {
 }
 
 
-splitmiRNATable = function(x) {
+splitmiRNATable = function(x, match="hsa") {
     # x is a matrix processed by mergeTablesByPatientID()
     # This function returns the table with only the miRNA section
     
-    return(x[grep("hsa", rownames(x)),])
+    return(x[grep(match, rownames(x)),])
 }
 
 
