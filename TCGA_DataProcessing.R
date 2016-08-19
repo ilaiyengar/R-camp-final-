@@ -24,21 +24,20 @@ mergeTablesByPatientID <- function(x, y, IDStart = 9, IDEnd = 12) {
 }
 
 
-splitmiRNATable = function(x, match="hsa") {
+splitTableByPattern = function(x, match="hsa") {
     # x one of the matrices processed by mergeTablesByPatientID()
-    # This function returns the table with only the miRNA section
+    # This function returns the table with only the row names that match the provided pattern section
     
     return(x[grep(match, rownames(x)),])
 }
 
 
 getCorrelated = function(file1, file2) {
-    
 
-    mRNA = read.table(file1, header=T, row.names=1, stringsAsFactors=F)
-    miRNA = read.table(file2, header=T, row.names=1, stringsAsFactors=F)
-    fullTable = mergeTablesByPatientID(mRNA, miRNA)
-    partialTable = as.matrix(splitmiRNATable(as.matrix(fullTable)))
+    fileOne = read.table(file1, header=T, row.names=1, stringsAsFactors=F)
+    fileTwo = read.table(file2, header=T, row.names=1, stringsAsFactors=F)
+    fullTable = mergeTablesByPatientID(fileOne, fileTwo)
+    partialTable = as.matrix(splitTableByPattern(as.matrix(fullTable)))
 
 
 
