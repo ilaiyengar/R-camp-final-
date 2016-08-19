@@ -29,6 +29,6 @@ for (iter1 in 1:(nrow(partialTable)-1)) {       # iterates over each row in the 
        
     }
 }
-corList = rev(sort(abs(corList)))
-highCor=corList[1:100]
+corList = rev(sort(abs(corList))) # Lists from most highly correlated to lowest
+highCor=corList[1:100] # Top 100 most highly correlated in vector called "highCor"
 highCor[1:10]
